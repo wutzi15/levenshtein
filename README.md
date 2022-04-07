@@ -16,8 +16,8 @@ go get github.com/wutzi15/levenshtein
 
 ```go
 func main() {
-    fmt.Println(levenshtein.Levenshtein("kitten", "sitting"))
-    fmt.Println(levenshtein.Levenshtein("Saturday", "Sunday"))
+    fmt.Println(levenshtein.Distance("kitten", "sitting"))
+    fmt.Println(levenshtein.Distance("Saturday", "Sunday"))
 }
 
 ```

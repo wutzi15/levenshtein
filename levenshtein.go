@@ -13,7 +13,7 @@ func min(a, b, c int) int {
 	return c
 }
 
-func Levenshtein(strA string, strB string) int {
+func Distance(strA string, strB string) int {
 	var stringA = ""
 	var stringB = ""
 	if len(strA) > len(strB) {
