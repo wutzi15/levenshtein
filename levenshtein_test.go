@@ -6,37 +6,23 @@ import (
 	"github.com/wutzi15/levenshtein"
 )
 
-func TestKitten(t *testing.T) {
-	lev := levenshtein.Distance("kitten", "sitting")
-	if lev != 3 {
-		t.Errorf("Levenshtein distance should be 3, but is %d", lev)
+func TestTable(t *testing.T) {
+	tests := []struct {
+		name   string
+		inputA string
+		inputB string
+		want   int
+	}{
+		{name: "AGrtB", inputA: "Saturday", inputB: "Sunday", want: 3},
+		{name: "kitten", inputA: "kitten", inputB: "sitting", want: 3},
+		{name: "text", inputA: "Text", inputB: "Test", want: 1},
+		{name: "equal", inputA: "Text", inputB: "Text", want: 0},
+		{name: "empty", inputA: "", inputB: "", want: 0},
 	}
-}
-
-func TestText(t *testing.T) {
-	lev := levenshtein.Distance("Text", "Test")
-	if lev != 1 {
-		t.Errorf("Levenshtein distance should be 1, but is %d", lev)
-	}
-}
-
-func TestEqual(t *testing.T) {
-	lev := levenshtein.Distance("Test", "Test")
-	if lev != 0 {
-		t.Errorf("Levenshtein distance should be 0, but is %d", lev)
-	}
-}
-
-func TestEmpty(t *testing.T) {
-	lev := levenshtein.Distance("", "")
-	if lev != 0 {
-		t.Errorf("Levenshtein distance should be 0, but is %d", lev)
-	}
-}
-
-func TestAGrtb(t *testing.T) {
-	lev := levenshtein.Distance("Saturday", "Sunday")
-	if lev != 3 {
-		t.Errorf("Levenshtein distance should be 0, but is %d", lev)
+	for i, tc := range tests {
+		got := levenshtein.Distance(tc.inputA, tc.inputB)
+		if got != tc.want {
+			t.Errorf("Test %d (%s): Levenshtein distance should be %d, but is %d", i, tc.name, tc.want, got)
+		}
 	}
 }
