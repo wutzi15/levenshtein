@@ -5,7 +5,7 @@ The levenshtein distance is a measure of the similarity between two strings. It 
 ## Installation
 
 ```bash
-go get
+go get github.com/wutzi15/levenshtein
 ```
 
 
@@ -13,8 +13,8 @@ go get
 
 ```go
 func main() {
-    fmt.Println(levenshtein.Distance("kitten", "sitting"))
-    fmt.Println(levenshtein.Distance("Saturday", "Sunday"))
+    fmt.Println(levenshtein.Levenshtein("kitten", "sitting"))
+    fmt.Println(levenshtein.Levenshtein("Saturday", "Sunday"))
 }
 
 ```
