@@ -13,7 +13,16 @@ func min(a, b, c int) int {
 	return c
 }
 
-func Levenshtein(stringA string, stringB string) int {
+func Levenshtein(strA string, strB string) int {
+	var stringA = ""
+	var stringB = ""
+	if len(strA) > len(strB) {
+		stringA = strB
+		stringB = strA
+	} else {
+		stringA = strA
+		stringB = strB
+	}
 	lenA := len(stringA) + 1
 	lenB := len(stringB) + 1
 	matrix := make([][]int, lenB)

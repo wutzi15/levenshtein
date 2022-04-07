@@ -33,3 +33,10 @@ func TestEmpty(t *testing.T) {
 		t.Errorf("Levenshtein distance should be 0, but is %d", lev)
 	}
 }
+
+func TestAGrtb(t *testing.T) {
+	lev := levenshtein.Levenshtein("Saturday", "Sunday")
+	if lev != 3 {
+		t.Errorf("Levenshtein distance should be 0, but is %d", lev)
+	}
+}
