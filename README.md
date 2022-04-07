@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/wutzi15/levenshtein/badge.svg?branch=main)](https://coveralls.io/github/wutzi15/levenshtein?branch=main)
+[![run tests](https://github.com/wutzi15/levenshtein/actions/workflows/go.yml/badge.svg)](https://github.com/wutzi15/levenshtein/actions/workflows/go.yml)
+
 # Levenshtein
 A very simple implementation of the Levenshtein distance in Go.
 The levenshtein distance is a measure of the similarity between two strings. It is the minimum number of single-character edits (insertions, deletions or substitutions) required to change one string into the other.[[1](https://en.wikipedia.org/wiki/Levenshtein_distance)]
